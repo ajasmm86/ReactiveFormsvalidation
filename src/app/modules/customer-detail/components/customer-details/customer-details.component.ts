@@ -10,7 +10,7 @@ import { UserField } from '../../../../interfaces/user-detail-interfaces';
   styleUrls: ['./customer-details.component.scss'],
 })
 export class CustomerDetailsComponent implements OnInit {
-  controlsArray: any = [];
+  controlsArray = [];
   get group(): AbstractControl {
     return this.customerFormService.form.get('customerDetails');
   }
