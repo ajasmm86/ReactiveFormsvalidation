@@ -1,0 +1,21 @@
+<form class="customer-details-container" [formGroup]="group">
+  <ng-container *ngFor="let userField of UserFields">
+    <app-form-input
+      [placeHolder]="userField.placeHolder"
+      [control]="controlsArray[userField.control]"
+      [errorMsg]="
+        controlsArray[userField.control].errors
+          ? userField.controlErrorMsg
+            ? controlsArray[userField.control].errors[userField.controlErrorMsg]
+            : userField.customErrorMsg || ''
+          : ''
+      "
+    ></app-form-input>
+  </ng-container>
+
+  <div class="action-btn">
+    <div>
+      <button mat-raised-button color="primary" (click)="reset()">RESET</button>
+    </div>
+  </div>
+</form>
